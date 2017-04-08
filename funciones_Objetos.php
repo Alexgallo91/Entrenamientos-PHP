@@ -155,11 +155,30 @@
 		public $age = 23;
 		protected $usercount = 12;
 
-		private function admin();
+		private function admin()
 		{
 			//admin code goes here
 		}
 	}
+
+	class Test2
+	{
+		static $static_property = "I'm static";
+
+		function get_sp()
+		{
+			return self::$static_property;
+		}
+	}
+
+	$temp = new Test2();
+
+	echo "Test A: ".Test2::$static_property;
+	echo "Test B: ".$temp->get_sp();
+	//echo "Test C: ".$temp->static_property;
+
+
+
 	
 
 ?>
